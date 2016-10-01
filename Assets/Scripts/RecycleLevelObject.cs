@@ -36,7 +36,7 @@ public class RecycleLevelObject : MonoBehaviour {
         StaticVariables.nextSectionDistance += StaticVariables.SectionDistance;
         if (recyclableList.Count > 0)
         {
-            
+            recyclableList[i].canBeRecycled = false;
             recyclableList.RemoveAt(i);
         }
            

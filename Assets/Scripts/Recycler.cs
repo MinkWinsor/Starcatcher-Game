@@ -22,9 +22,12 @@ public class Recycler : MonoBehaviour {
 	
     void OnTriggerEnter()
     {
-        print("Trigger");
-        canBeRecycled = true;
-        Start();
+
+
+            canBeRecycled = true;
+            Start();
+
+
     }
 
 }

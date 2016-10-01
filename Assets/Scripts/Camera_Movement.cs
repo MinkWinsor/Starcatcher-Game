@@ -21,22 +21,10 @@ public class Camera_Movement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        movement.y = (playerRef.transform.position.y - transform.position.y);
+        movement.y = (playerRef.transform.position.y - transform.position.y + 2);
         movement.y *= 2;
         transform.Translate(movement * Time.deltaTime);
-        OutsideCamera();
     }
 
-    public void OutsideCamera()
-    {
-        
-        cameraCheck = thisCamera.WorldToViewportPoint(playerRef.transform.position);
-        if (cameraCheck.x < 0 || cameraCheck.x > 1)
-        {
-            Scene tempScene;
-            tempScene = SceneManager.GetActiveScene();
-            string scName = tempScene.name;
-            SceneManager.LoadScene(scName);
-        }
-    }
+
 }
