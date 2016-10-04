@@ -17,7 +17,16 @@
  -Character Sprite replaced with capsule.
  -Level Remade "Prototype Two" Old level still exists.
 
- 
+ 1.2
+ Scrolling Terrain Added.
+ Terrain Updated.
+ Stars Reintegrated
+ "Prototype One" scene is now in use again. Prototype Two has been remade into prototype one.
+
+
+ 1.3
+Player Flipping Introduced.
+Terrain Updated.
  
  
  
