@@ -104,4 +104,11 @@ public class PlayerCC : MonoBehaviour {
             tempPos.y = jumpSpeed;
         }
     }
+
+
+    void OnDestroy()
+    {
+        UserInputs.MoveOnButtons -= Move;
+        UserInputs.JumpOnButtons -= Jump;
+    }
 }
