@@ -8,13 +8,12 @@ public class Camera_Movement : MonoBehaviour {
     public float speed;
     public GameObject playerRef;
 
-    private Camera thisCamera;
+
     private Vector3 movement;
     private Vector3 cameraCheck;
 
     void Start()
     {
-        thisCamera = GetComponent<Camera>();
         movement = new Vector3(speed, 0, 0);
     }
 
