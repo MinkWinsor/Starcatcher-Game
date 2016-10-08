@@ -5,6 +5,8 @@ using System;
 
 public class KillControl : MonoBehaviour {
 
+    public static Action StopAllScripts;
+
     void Start ()
     {
         StaticVariables.nextSectionDistance = StaticVariables.startingDistance;
@@ -12,7 +14,7 @@ public class KillControl : MonoBehaviour {
 
     void OnTriggerEnter()
     {
-        ResetLevel();
+        StopAllScripts();
     }
 
     public static void ResetLevel()

@@ -15,10 +15,6 @@ public class PlayerCC : MonoBehaviour {
     public float slideTime = 0.01f;
     private Vector3 tempPos;
     
-    //public void ReferenceSelf()
-    //{
-    //    myCC = GetComponent<CharacterController>();
-    //}
 
 
     //CoRoutine for sliding character
@@ -44,7 +40,7 @@ public class PlayerCC : MonoBehaviour {
     void StopScript()
     {
        UserInputs.MoveOnButtons -= Move;
-        UserInputs.JumpOnButtons -= Jump;
+       UserInputs.JumpOnButtons -= Jump;
     }
 
 	// Use this for initialization
@@ -54,8 +50,9 @@ public class PlayerCC : MonoBehaviour {
         myCC = GetComponent<CharacterController>();
         UserInputs.MoveOnButtons += Move;
         UserInputs.JumpOnButtons += Jump;
+        KillControl.StopAllScripts += StopScript;
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -36,7 +36,14 @@ public class CharacterFlipArt : MonoBehaviour
     void Start()
     {
         UserInputs.FlipDirection += FlipCharacter;
+        KillControl.StopAllScripts += stopScript;
         characterArt = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    void stopScript()
+    {
+        UserInputs.FlipDirection -= FlipCharacter;
+
     }
 
     void OnDestroy()
