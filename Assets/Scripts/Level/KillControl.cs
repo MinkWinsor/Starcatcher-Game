@@ -10,6 +10,7 @@ public class KillControl : MonoBehaviour {
     void Start ()
     {
         StaticVariables.nextSectionDistance = StaticVariables.startingDistance;
+        StaticVariables.nextSkySectionDistance = StaticVariables.startingSkyDistance;
     }
 
     void OnTriggerEnter()
@@ -24,7 +25,7 @@ public class KillControl : MonoBehaviour {
             //Scene tempScene;
             //tempScene = SceneManager.GetActiveScene();
             //string scName = tempScene.name;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             
         }
             
