@@ -17,7 +17,13 @@
  -Character Sprite replaced with capsule.
  -Level Remade "Prototype Two" Old level still exists.
 
- 
+ 1.2
+-Forgot to add notes, sorry!
+
+
+1.3
+-Added terrain assets, now there are 8 terrain models in 2 variations each for a total of 16 terrain pieces.
+-Added sprite animations for rabbit and wolf.
  
  
  

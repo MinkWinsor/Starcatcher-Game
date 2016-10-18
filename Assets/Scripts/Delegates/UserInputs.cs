@@ -8,7 +8,6 @@ public class UserInputs : MonoBehaviour {
     public static Action<float> MoveOnButtons;
     public static Action JumpOnButtons;
 
-
     // Update is called once per frame
     void Update () {
 
@@ -22,11 +21,18 @@ public class UserInputs : MonoBehaviour {
             FlipDirection(KeyCode.LeftArrow);
         }
 
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            JumpOnButtons();
+
         if (MoveOnButtons != null)
             MoveOnButtons(Input.GetAxis("Horizontal"));
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            JumpOnButtons();
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
 

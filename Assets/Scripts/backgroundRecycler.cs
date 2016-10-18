@@ -4,24 +4,26 @@ using System;
 
 public class backgroundRecycler : MonoBehaviour {
 
+    //**Public variables**//
+
     public static Action<backgroundRecycler> RecycleAction;
-    private Transform cube;
     public Vector3 movement;
+
+    //**Private variables**//
+
+    //private Transform cube;
 
     // Use this for initialization
     void Start()
     {
-        cube = this.GetComponent<Transform>();
-
+        //cube = this.GetComponent<Transform>();
     }
 
     void OnTriggerEnter()
     {
-
-
-        cube.Translate(movement);
-
-
+        print("Trigger");
+        //cube.Translate(movement);
+        this.transform.Translate(movement);
     }
 
 }

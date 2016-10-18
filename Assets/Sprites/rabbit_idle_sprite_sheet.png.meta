@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8d783d3bcdce2e043a5221d384ff985f
-timeCreated: 1476382384
+timeCreated: 1476674127
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -62,12 +62,12 @@ TextureImporter:
       name: rabbit_idle_sprite_sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 15
-        width: 187
-        height: 143
+        x: 26
+        y: 16
+        width: 160
+        height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -76,11 +76,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 15
-        width: 161
+        y: 16
+        width: 160
         height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -89,11 +89,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 422
-        y: 0
-        width: 168
-        height: 149
+        y: 16
+        width: 160
+        height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -102,11 +102,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 620
-        y: 15
-        width: 176
-        height: 145
+        y: 16
+        width: 160
+        height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -115,11 +115,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 818
-        y: 15
-        width: 161
-        height: 136
+        y: 16
+        width: 160
+        height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -127,12 +127,12 @@ TextureImporter:
       name: rabbit_idle_sprite_sheet_5
       rect:
         serializedVersion: 2
-        x: 1001
-        y: 15
-        width: 162
-        height: 137
+        x: 1002
+        y: 16
+        width: 160
+        height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

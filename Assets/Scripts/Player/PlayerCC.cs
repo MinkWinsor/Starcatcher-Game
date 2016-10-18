@@ -4,24 +4,27 @@ using System;
 
 public class PlayerCC : MonoBehaviour {
 
-    private CharacterController myCC;
+    //**Public variables**//
+
+    public float slideTime = 0.01f;
     public float speed = 1;
     public float gravity = 1;
     public float jumpSpeed = 1;
-
     public int jumpCount = 0;
     public int jumpCountMax = 2;
-
     public int slideDuration = 20;
-    public float slideTime = 0.01f;
-    private Vector3 tempPos;
+    public int sideForce;
 
     public Action jumpCheck;
     public Action runCheck;
     public Animator anim;
-    private bool running = false;
     
 
+    //**Private variables**//
+
+    private CharacterController myCC;
+    private Vector3 tempPos;
+    private bool running = false;
 
     //CoRoutine for sliding character
     IEnumerator Slide ()
@@ -51,8 +54,7 @@ public class PlayerCC : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-        print("Started");
+        
         myCC = GetComponent<CharacterController>();
         UserInputs.MoveOnButtons += Move;
         UserInputs.JumpOnButtons += Jump;
@@ -95,14 +97,20 @@ public class PlayerCC : MonoBehaviour {
     void Move(float _moveInY)
     {
 
-        tempPos.y -= gravity;
+        tempPos.y -= gravity * Time.deltaTime;
         tempPos.x = speed * Input.GetAxis("Horizontal");
+        tempPos.z = sideForce;
         if (tempPos.x != 0 && jumpCheck == null)
         {
             runCheck = runCheckHandler;
         }
+        if (myCC.isGrounded && tempPos.y < 0)
+        {
+            tempPos.y = 0;
+        }
 
         myCC.Move(tempPos * Time.deltaTime);
+
     }
 
     void Jump()
@@ -119,6 +127,7 @@ public class PlayerCC : MonoBehaviour {
             jumpCheck = jumpCheckHandler;
             anim.SetTrigger("jumpTrigger");
         }
+
     }
 
 
