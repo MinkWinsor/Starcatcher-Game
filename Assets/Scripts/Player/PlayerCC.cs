@@ -13,7 +13,6 @@ public class PlayerCC : MonoBehaviour {
     public int jumpCount = 0;
     public int jumpCountMax = 2;
     public int slideDuration = 20;
-    public int sideForce;
 
     public Action jumpCheck;
     public Action runCheck;
@@ -99,7 +98,6 @@ public class PlayerCC : MonoBehaviour {
 
         tempPos.y -= gravity * Time.deltaTime;
         tempPos.x = speed * Input.GetAxis("Horizontal");
-        tempPos.z = sideForce;
         if (tempPos.x != 0 && jumpCheck == null)
         {
             runCheck = runCheckHandler;

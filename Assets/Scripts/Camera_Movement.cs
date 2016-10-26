@@ -56,7 +56,7 @@ public class Camera_Movement : MonoBehaviour {
     void cameraShift()
     {
         movement.y = (playerRef.transform.position.y - transform.position.y + 2);
-        movement.y *= 2;
+        movement.y *= 3;
         transform.Translate(movement * Time.deltaTime);
     }
 
