@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class StarControl : MonoBehaviour {
 
@@ -8,26 +9,40 @@ public class StarControl : MonoBehaviour {
     public int forceRange = 10;
     public int torqueForceRange = 1;
     public float forceTime = 10;
+    public bool addToList = true;
 
     private float forceDuration = 0.1f;
     private Rigidbody rigid;
-    private float torqueForce = 10;
     private Vector3 forceVector;
     private Vector3 torqueVector;
+
+
+    public static Action<StarControl> ListAdd;
 
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        StartCoroutine(RunRandomForce());
+        StartCoroutine(addThisToList());
     }
-	
-	IEnumerator RunRandomForce()
-    {
-        forceVector.x = Random.Range(-forceRange, forceRange);
 
-        torqueVector.x = Random.Range(-torqueForceRange, torqueForceRange);
-        torqueVector.y = Random.Range(-torqueForceRange, torqueForceRange);
-        torqueVector.z = Random.Range(-torqueForceRange, torqueForceRange);
+    public IEnumerator addThisToList()
+    {
+        
+        if (ListAdd != null && addToList)
+        {
+            ListAdd(this);
+            yield return new WaitForSeconds(endTime);
+            gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator RunRandomForce()
+    {
+        forceVector.x = UnityEngine.Random.Range(-forceRange, forceRange);
+
+        torqueVector.x = UnityEngine.Random.Range(-torqueForceRange, torqueForceRange);
+        torqueVector.y = UnityEngine.Random.Range(-torqueForceRange, torqueForceRange);
+        torqueVector.z = UnityEngine.Random.Range(-torqueForceRange, torqueForceRange);
 
         while (forceTime > 0)
         {
@@ -44,6 +59,6 @@ public class StarControl : MonoBehaviour {
     void OnCollisionEnter()
     {
         forceTime = 0;
-        Destroy(gameObject, endTime);
+        StartCoroutine(addThisToList());
     }
 }

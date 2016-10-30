@@ -7,11 +7,13 @@ public class Star_Collision : MonoBehaviour
     private ScoreCounter levelControlScore;
     private GameObject levelControl;
     public int scorePerStar;
+    public StarControl myStarControl;
 
     //Called once per initialization.
     void Start()
     {
         //References set.
+        myStarControl = gameObject.GetComponentInParent<StarControl>();
         levelControl = GameObject.FindGameObjectWithTag("GameController");
         levelControlScore = levelControl.GetComponent<ScoreCounter>();
     }
@@ -19,7 +21,8 @@ public class Star_Collision : MonoBehaviour
     void OnTriggerEnter()
     {
 
-            levelControlScore.AddToScore(scorePerStar);
-            Destroy(this.transform.parent.gameObject);
+        levelControlScore.AddToScore(scorePerStar);
+        StartCoroutine(myStarControl.addThisToList());
+        //Destroy(this.transform.parent.gameObject);
     }
 }
