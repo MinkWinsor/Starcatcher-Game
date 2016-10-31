@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using System;
 
 public class CloneStar : MonoBehaviour {
 
@@ -9,9 +7,8 @@ public class CloneStar : MonoBehaviour {
     public float spawnFrequency;
     public bool canSpawnStars = true;
 
-    public List<StarControl> starList;
+    public GameObject[] stars;
 
-    private bool startRunning = true;
     private int i = 0;
     private int j = 0;
 
@@ -19,47 +16,32 @@ public class CloneStar : MonoBehaviour {
     {
         while (canSpawnStars)
         {
-            i = UnityEngine.Random.Range(0, spawnPoints.Length - 1);
-            print(starList.Count);
-            j = UnityEngine.Random.Range(0, starList.Count - 1);
-            print(j);
-            
-            starList[j].gameObject.SetActive(true);
-            starList[j].transform.position = spawnPoints[i].position;
+            i = Random.Range(0, spawnPoints.Length - 1);
+            stars[j].SetActive(true);
+            stars[j].transform.position = spawnPoints[i].position;
+            stars[j].GetComponent<StarControl>().addForces();
+            //StartCoroutine(stars[j].GetComponent<StarControl>().RunRandomForce());
 
-            if (starList.Count > 0)
+            if (j < stars.Length - 1)
             {
-                starList[i].addToList = true;
-                starList.RemoveAt(i);
+                j++;
             }
-
+            else
+            {
+                j = 0;
+            }
             //Instantiate(star, spawnPoints[i].position, Quaternion.identity);
             yield return new WaitForSeconds(spawnFrequency);
 
         }
     }
-	// Use this for initialization
-	void Start () {
 
-        StarControl.ListAdd += ListAddHandler;
-        
-	}
 
-    void ListAddHandler(StarControl _l)
+
+
+    void Start()
     {
-        if (_l.addToList)
-            starList.Add(_l);
-        
-    }
-
-    void Update()
-    {
-        if (startRunning == true)
-        {
-            startRunning = false;
-            StartCoroutine(SpawnStars());
-        }
-
+        StartCoroutine(SpawnStars());
     }
 	    
 }

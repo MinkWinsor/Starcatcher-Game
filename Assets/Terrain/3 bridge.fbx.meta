@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 4e88613df9fa30741bd6bf8c0fa7e0c6
-timeCreated: 1477288245
+guid: d43b10071ad51bf499b115fbf432f2af
+timeCreated: 1477887746
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: candycane_Valley_terrain
+    100002: chasm_right2
+    100004: Lollipop_bridge_terrain
     400000: //RootNode
-    400002: candycane_Valley_terrain
-    2300000: candycane_Valley_terrain
-    3300000: candycane_Valley_terrain
-    4300000: candycane_Valley_terrain
+    400002: chasm_right2
+    400004: Lollipop_bridge_terrain
+    2300000: chasm_right2
+    2300002: Lollipop_bridge_terrain
+    3300000: chasm_right2
+    3300002: Lollipop_bridge_terrain
+    4300000: Lollipop_bridge_terrain
+    4300002: chasm_right2
     9500000: //RootNode
   materials:
     importMaterials: 1

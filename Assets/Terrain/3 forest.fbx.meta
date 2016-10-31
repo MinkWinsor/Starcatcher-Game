@@ -1,36 +1,22 @@
 fileFormatVersion: 2
-guid: 941c1675cac55aa42aa24f2aa81e213d
-timeCreated: 1475564481
+guid: 000b7efb429db5a4e8db878dfc1d623b
+timeCreated: 1477887754
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: bend1Handle
-    100002: chasm_right2
-    100004: high_RES
-    100006: licorice
-    100008: licorice2
-    100010: //RootNode
-    100012: Lollipop_bridge_terrain
-    400000: bend1Handle
-    400002: chasm_right2
-    400004: high_RES
-    400006: licorice
-    400008: licorice2
-    400010: //RootNode
-    400012: Lollipop_bridge_terrain
-    2300000: chasm_right2
-    2300002: licorice
-    2300004: licorice2
-    2300006: Lollipop_bridge_terrain
-    3300000: chasm_right2
-    3300002: licorice
-    3300004: licorice2
-    3300006: Lollipop_bridge_terrain
-    4300000: Lollipop_bridge_terrain
-    4300002: chasm_right2
-    4300004: licorice
-    4300006: licorice2
+    100000: //RootNode
+    100002: lollipop_Forest_terrain
+    100004: plateau_right1
+    400000: //RootNode
+    400002: lollipop_Forest_terrain
+    400004: plateau_right1
+    2300000: lollipop_Forest_terrain
+    2300002: plateau_right1
+    3300000: lollipop_Forest_terrain
+    3300002: plateau_right1
+    4300000: lollipop_Forest_terrain
+    4300002: plateau_right1
     9500000: //RootNode
   materials:
     importMaterials: 1

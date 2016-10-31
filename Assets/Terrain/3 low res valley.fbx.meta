@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: 658cb9b9ace9ba147b8e46b8e79e7610
-timeCreated: 1477288233
+guid: f64c37e65f99b2b43aa428e1d9aae5f9
+timeCreated: 1477888275
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Candy_Mountain_terrain
-    100004: plateau_middle1
+    100002: candycane_Valley_terrain
     400000: //RootNode
-    400002: Candy_Mountain_terrain
-    400004: plateau_middle1
-    2300000: Candy_Mountain_terrain
-    2300002: plateau_middle1
-    3300000: Candy_Mountain_terrain
-    3300002: plateau_middle1
-    4300000: Candy_Mountain_terrain
-    4300002: plateau_middle1
+    400002: candycane_Valley_terrain
+    2300000: candycane_Valley_terrain
+    3300000: candycane_Valley_terrain
+    4300000: candycane_Valley_terrain
     9500000: //RootNode
   materials:
     importMaterials: 1

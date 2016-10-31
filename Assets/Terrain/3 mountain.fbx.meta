@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 1aeaec9f4149e91499668667669b8a80
-timeCreated: 1477288260
+guid: a58a01a6c26b25848959885c5a13bc5d
+timeCreated: 1477887765
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: gingerbread_Desert_terrain
+    100002: Candy_Mountain_terrain
+    100004: plateau_middle1
     400000: //RootNode
-    400002: gingerbread_Desert_terrain
-    2300000: gingerbread_Desert_terrain
-    3300000: gingerbread_Desert_terrain
-    4300000: gingerbread_Desert_terrain
+    400002: Candy_Mountain_terrain
+    400004: plateau_middle1
+    2300000: Candy_Mountain_terrain
+    2300002: plateau_middle1
+    3300000: Candy_Mountain_terrain
+    3300002: plateau_middle1
+    4300000: Candy_Mountain_terrain
+    4300002: plateau_middle1
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -98,10 +98,13 @@ public class PlayerCC : MonoBehaviour {
 
         tempPos.y -= gravity * Time.deltaTime;
         tempPos.x = speed * Input.GetAxis("Horizontal");
-        if (tempPos.x != 0 && jumpCheck == null)
+        /*if (tempPos.x != 0 && jumpCheck == null)
         {
             runCheck = runCheckHandler;
-        }
+        }*/
+        anim.SetFloat("MoveSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));
+        
+        //print(Input.GetAxis("Horizontal"));
         if (myCC.isGrounded && tempPos.y < 0)
         {
             tempPos.y = 0;
@@ -122,7 +125,7 @@ public class PlayerCC : MonoBehaviour {
         {
             jumpCount++;
             tempPos.y = jumpSpeed;
-            jumpCheck = jumpCheckHandler;
+            //jumpCheck = jumpCheckHandler;
             anim.SetTrigger("jumpTrigger");
         }
 
@@ -135,7 +138,7 @@ public class PlayerCC : MonoBehaviour {
         UserInputs.JumpOnButtons -= Jump;
     }
 
-    void jumpCheckHandler()
+    /*void jumpCheckHandler()
     {
         if (myCC.isGrounded)
         {
@@ -160,6 +163,6 @@ public class PlayerCC : MonoBehaviour {
             running = false;
             runCheck = null;
         }
-    }
+    }*/
 
 }

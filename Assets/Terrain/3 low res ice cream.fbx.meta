@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: abcc1590d34ea894fa08c9fea34f337d
-timeCreated: 1477288305
+guid: f10bc4ed9a9ab354b97aeb0c60d8d1af
+timeCreated: 1477887889
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: lollipop_Forest_terrain
-    100004: plateau_right1
+    100002: ice_Cream_Ridge_terrain
     400000: //RootNode
-    400002: lollipop_Forest_terrain
-    400004: plateau_right1
-    2300000: lollipop_Forest_terrain
-    2300002: plateau_right1
-    3300000: lollipop_Forest_terrain
-    3300002: plateau_right1
-    4300000: lollipop_Forest_terrain
-    4300002: plateau_right1
+    400002: ice_Cream_Ridge_terrain
+    2300000: ice_Cream_Ridge_terrain
+    3300000: ice_Cream_Ridge_terrain
+    4300000: ice_Cream_Ridge_terrain
     9500000: //RootNode
   materials:
     importMaterials: 1
