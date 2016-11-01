@@ -3,17 +3,17 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 public class KillControl : MonoBehaviour {
 
     //Action that is subscribed to by many scripts needing  user input.
     public static Action StopAllScripts;
-    //public static List<GameObject> deathScreen;
+    private GameObject[] deathScreen;
 
     //Sets static variables when game level begins. Not needed for the first use, but if the level resets this prevents errors.
     void Start ()
     {
+        deathScreen = GameObject.FindGameObjectsWithTag("Death Screen");
         StaticVariables.nextSectionDistance = StaticVariables.startingDistance;
         StaticVariables.nextSkySectionDistance = StaticVariables.startingSkyDistance;
         StopAllScripts += ResetLevel;
@@ -27,21 +27,25 @@ public class KillControl : MonoBehaviour {
 
     //This function can be called from everywhere, and completely reloads the level.
     public static void ResetLevel()
-    {    
+    {
+        //showObjects();
         SceneManager.LoadScene(1);
 	}
-    /*
-    public static void DeathScreen(GameObject objectToShow)
+
+
+    public void StartReset()
     {
-        deathScreen.Add(objectToShow);
+        showObjects();
+        //SceneManager.LoadScene(1);
     }
 
 
-     public static void showObjects()
+
+    public void showObjects()
     {
         foreach (GameObject thisObject in deathScreen)
         {
-            if(thisObject.GetComponent<Button>() != null)
+            if (thisObject.GetComponent<Button>() != null)
             {
                 thisObject.GetComponent<Button>().enabled = true;
             }
@@ -59,5 +63,5 @@ public class KillControl : MonoBehaviour {
             }
         }
     }
-    */
+    
 }

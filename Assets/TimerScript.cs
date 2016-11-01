@@ -15,6 +15,11 @@ public class TimerScript : MonoBehaviour {
             yield return new WaitForSeconds(1);
             timeLeft--;
             timeText.text = ("Time: " + (timeLeft / 60) + ":" + (timeLeft % 60) );
+            if (timeLeft == 0)
+            {
+
+                KillControl.ResetLevel();
+            }
         }
     }
 

@@ -22,7 +22,10 @@ public class UserInputs : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        {
             JumpOnButtons();
+        }
+            
 
         if (MoveOnButtons != null)
             MoveOnButtons(Input.GetAxis("Horizontal"));

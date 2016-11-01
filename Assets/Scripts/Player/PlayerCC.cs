@@ -13,9 +13,10 @@ public class PlayerCC : MonoBehaviour {
     public int jumpCount = 0;
     public int jumpCountMax = 2;
     public int slideDuration = 20;
+    public groundCheckScript groundCollider;
 
-    public Action jumpCheck;
-    public Action runCheck;
+   // public Action jumpCheck;
+    //public Action runCheck;
     public Animator anim;
     
 
@@ -23,7 +24,7 @@ public class PlayerCC : MonoBehaviour {
 
     private CharacterController myCC;
     private Vector3 tempPos;
-    private bool running = false;
+    //private bool running = false;
 
     //CoRoutine for sliding character
     IEnumerator Slide ()
@@ -63,7 +64,7 @@ public class PlayerCC : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        
 
         //Start Sliding
         if (Input.GetKeyDown(KeyCode.D) && Input.GetKey(KeyCode.S))
@@ -72,14 +73,14 @@ public class PlayerCC : MonoBehaviour {
             StartCoroutine(Slide());
         }
 
-        if(jumpCheck != null)
+        /*if(jumpCheck != null)
         {
             jumpCheck();
         }
         if (runCheck != null)
         {
             runCheck();
-        }
+        }*/
 
         if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.S))
         {
@@ -108,11 +109,14 @@ public class PlayerCC : MonoBehaviour {
         if (myCC.isGrounded && tempPos.y < 0)
         {
             tempPos.y = 0;
+            jumpCount = 0;
         }
 
         myCC.Move(tempPos * Time.deltaTime);
 
     }
+
+    
 
     void Jump()
     {

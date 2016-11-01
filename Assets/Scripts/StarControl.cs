@@ -21,7 +21,7 @@ public class StarControl : MonoBehaviour {
     {
         
         anims = GetComponent<Animator>();
-        
+        anims.SetBool("Destory", false);
     }
     
     public void addForces()
