@@ -26,7 +26,11 @@
 -Added sprite animations for rabbit and wolf.
  
  
- 
+ 1.4
+ -Added stars, star recycling
+ -Cleanup of a lot of code.
+ -Deletion of old code pieces.
+ -Updating of terrain.
  
  
  
