@@ -8,14 +8,12 @@ public class KillControl : MonoBehaviour {
 
     //Action that is subscribed to by many scripts needing  user input.
     public static Action StopAllScripts;
-    private GameObject[] deathScreen;
+    public GameObject[] deathScreen;
 
     //Sets static variables when game level begins. Not needed for the first use, but if the level resets this prevents errors.
     void Start ()
     {
-        deathScreen = GameObject.FindGameObjectsWithTag("Death Screen");
         StaticVariables.nextSectionDistance = StaticVariables.startingDistance;
-        StaticVariables.nextSkySectionDistance = StaticVariables.startingSkyDistance;
         StopAllScripts += ResetLevel;
     }
 
@@ -28,7 +26,6 @@ public class KillControl : MonoBehaviour {
     //This function can be called from everywhere, and completely reloads the level.
     public static void ResetLevel()
     {
-        //showObjects();
         SceneManager.LoadScene(1);
 	}
 
@@ -36,7 +33,6 @@ public class KillControl : MonoBehaviour {
     public void StartReset()
     {
         showObjects();
-        //SceneManager.LoadScene(1);
     }
 
 
