@@ -108,6 +108,7 @@ public class PlayerCC : MonoBehaviour {
         //print(Input.GetAxis("Horizontal"));
         if (myCC.isGrounded && tempPos.y < 0)
         {
+            anim.SetBool("Jumping", false);
             tempPos.y = 0;
             jumpCount = 0;
         }
@@ -130,7 +131,7 @@ public class PlayerCC : MonoBehaviour {
             jumpCount++;
             tempPos.y = jumpSpeed;
             //jumpCheck = jumpCheckHandler;
-            anim.SetTrigger("jumpTrigger");
+            anim.SetBool("Jumping", true);
         }
 
     }
