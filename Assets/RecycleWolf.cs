@@ -5,9 +5,11 @@ public class RecycleWolf : MonoBehaviour {
 
     public TimerScript refTimer;
     public GameObject wolfRef;
+    public WolfHitPlayer hitScript;
 
     // Use this for initialization
     void OnTriggerEnter () {
+        hitScript.triggerReady = true;
         wolfRef.SetActive(false);
         refTimer.wolfReady = true;
 	}

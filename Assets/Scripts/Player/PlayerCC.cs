@@ -13,7 +13,7 @@ public class PlayerCC : MonoBehaviour {
     public int jumpCount = 0;
     public int jumpCountMax = 2;
     public int slideDuration = 20;
-    public groundCheckScript groundCollider;
+    //public groundCheckScript groundCollider;
 
    // public Action jumpCheck;
     //public Action runCheck;

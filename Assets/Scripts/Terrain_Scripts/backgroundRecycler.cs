@@ -21,7 +21,7 @@ public class backgroundRecycler : MonoBehaviour {
 
     void OnTriggerEnter()
     {
-        print("Trigger");
+
         //cube.Translate(movement);
         this.transform.Translate(movement);
     }

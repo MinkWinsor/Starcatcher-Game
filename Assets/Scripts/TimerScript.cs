@@ -14,7 +14,7 @@ public class TimerScript : MonoBehaviour {
     public Enemy_Movement_Handler wolfScript;
 
     private const float X_OFFSET = 20;
-    private const float Y_OFFSET = 2;
+    private const float Y_OFFSET = -1;
 
     IEnumerator Countdown()
     {

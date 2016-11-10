@@ -7,7 +7,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
     public float gravity = 10;
     public float jumpStrength = 5;
     public Animator anim;
-    public bool runToRight;
+    //public bool runToRight;
     public Transform charArt;
     public bool forward = true;
 
@@ -15,6 +15,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
     private Vector3 movement;
     private CharacterController myCC;
     private Vector3 tempPos;
+    private bool keepGoing = true;
 
 
     // Use this for initialization
@@ -22,7 +23,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
         myCC = GetComponent<CharacterController>();
         movement = new Vector3(speed, 0 ,0);
         //lastXPosition = transform.position.x;
-        //StartCoroutine(MoveHandler());
+        StartCoroutine(MoveHandler());
     }
 
     public void SetDirection(bool runRight)
@@ -51,37 +52,52 @@ public class Enemy_Movement_Handler : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        
-        movement.y -= gravity * Time.deltaTime;
-        myCC.Move(movement * Time.deltaTime);
+
+
         /*if (transform.position.x <= (lastXPosition + (0.1f * Time.deltaTime)))
         {
             movement.y = jumpStrength;
-            anim.SetTrigger("Jump");
-        }
+            
+        }*/
 
-        /*if (transform.position.z != 0)
+
+        /*movement.y -= gravity * Time.deltaTime;
+        myCC.Move(movement * Time.deltaTime);
+
+        if (transform.position.z != 0)
         {
             tempPos = transform.position;
             tempPos.z = 0;
             transform.position = tempPos;
         }*/
-            
-        
+
+
         //lastXPosition = transform.position.x;
     }
 
     public void jumpHandler()
     {
         movement.y = jumpStrength;
+        anim.SetTrigger("Jump");
     }
 
     IEnumerator MoveHandler()
     {
-        while (true)
+        while (keepGoing)
         {
-            
+            yield return new WaitForSeconds(.01f);
+
+            movement.y -= gravity * Time.deltaTime;
+            myCC.Move(movement * Time.deltaTime);
+
+            if (transform.position.z != 0)
+            {
+                tempPos = transform.position;
+                tempPos.z = 0;
+                transform.position = tempPos;
+            }
+
         }
-        
+
     }
 }

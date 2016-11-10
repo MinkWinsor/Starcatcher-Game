@@ -7,6 +7,7 @@ public class CharacterFlipArt : MonoBehaviour
 
     private Transform characterArt;
     public bool forward = true;
+    public SpriteRenderer spriteRen;
 
     //This function flips the art and sets that the art has been flipped.
 
@@ -51,4 +52,21 @@ public class CharacterFlipArt : MonoBehaviour
         UserInputs.FlipDirection -= FlipCharacter;
     }
 
+    public IEnumerator flashCharacter()
+    {
+        int flashCount = 3;
+        while (flashCount > 0)
+        {
+            yield return new WaitForSeconds(.1f);
+            flashCount--;
+
+            spriteRen.enabled = false;
+            yield return new WaitForSeconds(.1f);
+            spriteRen.enabled = true;
+        }
+
+
+
+
+    }
 }
