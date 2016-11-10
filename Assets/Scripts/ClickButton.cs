@@ -7,6 +7,6 @@ public class ClickButton : MonoBehaviour {
 
 void OnMouseDown()
     {
-        KillControl.ResetLevel();
+        ResetHandler.ResetLevel();
     }
 }

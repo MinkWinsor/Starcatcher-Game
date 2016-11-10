@@ -26,7 +26,7 @@ public class TimerScript : MonoBehaviour {
             if (timeLeft == 0)
             {
 
-                KillControl.ResetLevel();
+                ResetHandler.ResetLevel();
             }
 
             if (wolfSpawnChance > UnityEngine.Random.Range(0, 100) && wolfReady)

@@ -15,7 +15,7 @@ public class PlayerCC : MonoBehaviour {
     public int slideDuration = 20;
     //public groundCheckScript groundCollider;
 
-   // public Action jumpCheck;
+    //public Action jumpCheck;
     //public Action runCheck;
     public Animator anim;
     

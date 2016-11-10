@@ -24,6 +24,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
         movement = new Vector3(speed, 0 ,0);
         //lastXPosition = transform.position.x;
         StartCoroutine(MoveHandler());
+        KillControl.StopAllScripts += stopMoving;
     }
 
     public void SetDirection(bool runRight)
@@ -48,6 +49,11 @@ public class Enemy_Movement_Handler : MonoBehaviour {
                 forward = false;
             }
         }
+    }
+
+    public void stopMoving()
+    {
+        keepGoing = false;
     }
 
 	// Update is called once per frame

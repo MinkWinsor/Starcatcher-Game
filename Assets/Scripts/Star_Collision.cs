@@ -7,6 +7,7 @@ public class Star_Collision : MonoBehaviour
     public ScoreCounter levelControlScore;
     public int scorePerStar;
     private StarControl myStarControl;
+    public bool hasHitGround = false;
 
     //Called once per initialization.
     void Start()
@@ -14,11 +15,27 @@ public class Star_Collision : MonoBehaviour
         myStarControl = GetComponentInParent<StarControl>();
     }
 
+    public void groundHit()
+    {
+        hasHitGround = true;
+    }
+
     void OnTriggerEnter()
     {
+        if (hasHitGround)
+        {
+            levelControlScore.AddToScore(scorePerStar);
+            hasHitGround = false;
+            myStarControl.Deactivate();
+        }
+        else
+        {
+            levelControlScore.AddToScore(scorePerStar * 2);
+            myStarControl.Deactivate();
+        }
 
-        levelControlScore.AddToScore(scorePerStar);
-        myStarControl.Deactivate();
+
+        
         //Destroy(this.transform.parent.gameObject);
     }
 

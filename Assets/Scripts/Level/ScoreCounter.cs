@@ -17,7 +17,7 @@ public class ScoreCounter : MonoBehaviour {
 
     public void PlayerHit()
     {
-        if (score > starsLost)
+        if (score >= starsLost)
         {
             score -= starsLost;
             scoreText.text = ("Score: " + score);

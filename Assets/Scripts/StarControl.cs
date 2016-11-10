@@ -15,11 +15,12 @@ public class StarControl : MonoBehaviour {
     private Vector3 forceVector;
     private Animator anims;
     private Vector3 torqueVector;
+    public Star_Collision mySC;
 
 
     void Start()
     {
-        
+        mySC = GetComponentInChildren<Star_Collision>();
         anims = GetComponent<Animator>();
         anims.SetBool("Destory", false);
     }
@@ -59,6 +60,7 @@ public class StarControl : MonoBehaviour {
     void OnCollisionEnter()
     {
         forceTime = 0;
+        mySC.groundHit();
         anims.SetBool("Destory", true);
     }
 }
