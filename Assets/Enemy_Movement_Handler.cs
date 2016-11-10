@@ -54,6 +54,8 @@ public class Enemy_Movement_Handler : MonoBehaviour {
     public void stopMoving()
     {
         keepGoing = false;
+        anim.enabled = false;
+        KillControl.StopAllScripts -= stopMoving;
     }
 
 	// Update is called once per frame

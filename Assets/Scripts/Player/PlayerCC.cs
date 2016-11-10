@@ -50,6 +50,8 @@ public class PlayerCC : MonoBehaviour {
     {
        UserInputs.MoveOnButtons -= Move;
        UserInputs.JumpOnButtons -= Jump;
+       anim.enabled = false;
+       KillControl.StopAllScripts -= StopScript;
     }
 
 	// Use this for initialization
