@@ -6,8 +6,12 @@ public class StartGame : MonoBehaviour {
 
     public void loadLevel()
     {
-        print("Called");
         SceneManager.LoadScene(1);
+    }
+
+    public void loadMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void quitGame()
