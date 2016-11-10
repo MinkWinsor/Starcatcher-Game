@@ -22,7 +22,8 @@ public class TimerScript : MonoBehaviour {
         {
             yield return new WaitForSeconds(1);
             timeLeft--;
-            timeText.text = ("Time: " + (timeLeft / 60) + ":" + (timeLeft % 60) );
+            dispTime();
+            
             if (timeLeft == 0)
             {
 
@@ -58,8 +59,20 @@ public class TimerScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        dispTime();
         StartCoroutine(Countdown());
     }
 	
+    void dispTime()
+    {
+        int secondsLeft = (timeLeft % 60);
+        if (secondsLeft > 9)
+        {
+            timeText.text = ("Time: " + (timeLeft / 60) + ":" + secondsLeft);
+        }
+        else
+        {
+            timeText.text = ("Time: " + (timeLeft / 60) + ":0" + secondsLeft);
+        }
+    }
 }
