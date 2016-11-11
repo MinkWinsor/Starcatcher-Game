@@ -7,9 +7,10 @@ public class WolfSpawn : MonoBehaviour {
     public GameObject wolfRef;
     public float wolfSpawnChance;
     public Transform cameraPosition;
+    public Enemy_Movement_Handler moveScript;
 
     private const float X_OFFSET = 20;
-    private const float Y_OFFSET = -1;
+    private const float Y_OFFSET = 1;
     private Vector3 tempPos;
 
     public bool wolfReady = true;
@@ -39,6 +40,7 @@ public class WolfSpawn : MonoBehaviour {
                 tempPos.x -= X_OFFSET;
                 wolfRef.transform.position = tempPos;
                 wolfRef.SetActive(true);
+                
                 wolfReady = false;
             }
         }

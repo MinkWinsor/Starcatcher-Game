@@ -12,6 +12,7 @@ public class RecycleWolf : MonoBehaviour {
 
     void OnTriggerEnter () {
         hitScript.triggerReady = true;
+
         wolfRef.SetActive(false);
         spawnScript.wolfReady = true;
 	}

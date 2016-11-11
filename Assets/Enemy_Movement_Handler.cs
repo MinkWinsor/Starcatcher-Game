@@ -22,6 +22,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Debug.Log("Running");
         myCC = GetComponent<CharacterController>();
         movement = new Vector3(speed, 0 ,0);
         //lastXPosition = transform.position.x;
@@ -86,6 +87,10 @@ public class Enemy_Movement_Handler : MonoBehaviour {
     }*/
 
 
+        public void moveReset()
+    {
+        movement = new Vector3(speed, 0, 0);
+    }
 
 
 
@@ -101,13 +106,18 @@ public class Enemy_Movement_Handler : MonoBehaviour {
 
     IEnumerator MoveHandler()
     {
+        
         while (keepGoing)
         {
             yield return new WaitForSeconds(.01f);
-
+            //print("Running");
             movement.y -= gravity * Time.deltaTime;
             myCC.Move(movement * Time.deltaTime);
 
+            /*if(movement.y > (gravity * 5))
+            {
+                movement.y = gravity * 5;
+            }*/
 
             if (transform.position.z != 0)
             {
