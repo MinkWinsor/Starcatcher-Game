@@ -3,19 +3,17 @@ using System.Collections;
 
 public class RecycleWolf : MonoBehaviour {
 
-    public TimerScript refTimer;
+    public WolfSpawn spawnScript;
     public GameObject wolfRef;
-    public WolfHitPlayer hitScript;
 
-    // Use this for initialization
+
+    public WolfHitPlayer hitScript;
+    
+
     void OnTriggerEnter () {
         hitScript.triggerReady = true;
         wolfRef.SetActive(false);
-        refTimer.wolfReady = true;
+        spawnScript.wolfReady = true;
 	}
-	
-	// Update is called once per frame
-	void Start () {
-	
-	}
+
 }

@@ -6,6 +6,8 @@ public class Enemy_Movement_Handler : MonoBehaviour {
     public float speed = 0;
     public float gravity = 10;
     public float jumpStrength = 5;
+
+
     public Animator anim;
     //public bool runToRight;
     public Transform charArt;
@@ -58,7 +60,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
         KillControl.StopAllScripts -= stopMoving;
     }
 
-	// Update is called once per frame
+	/* Update is called once per frame
 	void Update () {
 
 
@@ -77,17 +79,25 @@ public class Enemy_Movement_Handler : MonoBehaviour {
             tempPos = transform.position;
             tempPos.z = 0;
             transform.position = tempPos;
-        }*/
+        }
 
 
         //lastXPosition = transform.position.x;
-    }
+    }*/
+
+
+
+
+
 
     public void jumpHandler()
     {
         movement.y = jumpStrength;
         anim.SetTrigger("Jump");
     }
+
+
+
 
     IEnumerator MoveHandler()
     {
@@ -97,6 +107,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
 
             movement.y -= gravity * Time.deltaTime;
             myCC.Move(movement * Time.deltaTime);
+
 
             if (transform.position.z != 0)
             {
