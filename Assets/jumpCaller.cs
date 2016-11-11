@@ -5,9 +5,21 @@ public class jumpCaller : MonoBehaviour {
 
 
     public Enemy_Movement_Handler myScript;
-    
-	void OnTriggerEnter () {
-        myScript.jumpHandler();
+    private bool canTrigger = true;
+
+	void OnTriggerEnter (Collider other) {
+        if (canTrigger)
+        {
+            print(other);
+            myScript.jumpHandler();
+            canTrigger = false;
+        }
+        
 	}
+
+    void OnTriggerExit()
+    {
+        canTrigger = true;
+    }
 	
 }

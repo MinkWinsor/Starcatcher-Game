@@ -40,7 +40,8 @@ public class WolfSpawn : MonoBehaviour {
                 tempPos.x -= X_OFFSET;
                 wolfRef.transform.position = tempPos;
                 wolfRef.SetActive(true);
-                
+                moveScript.keepGoing = true;
+                StartCoroutine(moveScript.MoveHandler());
                 wolfReady = false;
             }
         }

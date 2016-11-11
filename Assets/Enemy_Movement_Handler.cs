@@ -17,7 +17,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
     private Vector3 movement;
     private CharacterController myCC;
     private Vector3 tempPos;
-    private bool keepGoing = true;
+    public bool keepGoing = true;
 
 
     // Use this for initialization
@@ -25,8 +25,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
         Debug.Log("Running");
         myCC = GetComponent<CharacterController>();
         movement = new Vector3(speed, 0 ,0);
-        //lastXPosition = transform.position.x;
-        StartCoroutine(MoveHandler());
+        
         KillControl.StopAllScripts += stopMoving;
     }
 
@@ -97,6 +96,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
 
     public void jumpHandler()
     {
+        print("Jumping");
         movement.y = jumpStrength;
         anim.SetTrigger("Jump");
     }
@@ -104,13 +104,13 @@ public class Enemy_Movement_Handler : MonoBehaviour {
 
 
 
-    IEnumerator MoveHandler()
+    public IEnumerator MoveHandler()
     {
         
         while (keepGoing)
         {
             yield return new WaitForSeconds(.01f);
-            //print("Running");
+            
             movement.y -= gravity * Time.deltaTime;
             myCC.Move(movement * Time.deltaTime);
 
