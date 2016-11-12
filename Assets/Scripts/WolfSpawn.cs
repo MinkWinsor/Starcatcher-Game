@@ -16,7 +16,7 @@ public class WolfSpawn : MonoBehaviour {
     public bool wolfReady = true;
 
 
-    //public Enemy_Movement_Handler wolfScript;
+    public Enemy_Movement_Handler wolfScript;
 
 
     // Use this for initialization
@@ -37,9 +37,24 @@ public class WolfSpawn : MonoBehaviour {
                 tempPos = cameraPosition.transform.position;
                 tempPos.z = 0;
                 tempPos.y += Y_OFFSET;
-                tempPos.x -= X_OFFSET;
-                wolfRef.transform.position = tempPos;
+
                 wolfRef.SetActive(true);
+
+                if (UnityEngine.Random.Range(0, 100) > 50)
+                {
+                    tempPos.x -= X_OFFSET;
+                    wolfScript.SetDirection(true);
+                }
+                else
+                {
+                    tempPos.x += X_OFFSET;
+                    wolfScript.SetDirection(false);
+                }
+
+
+
+                wolfRef.transform.position = tempPos;
+                
                 moveScript.keepGoing = true;
                 StartCoroutine(moveScript.MoveHandler());
                 wolfReady = false;

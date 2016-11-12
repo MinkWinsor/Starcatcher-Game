@@ -11,7 +11,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
     public Animator anim;
     //public bool runToRight;
     public Transform charArt;
-    public bool forward = true;
+    private bool forward = true;
 
     //private float lastXPosition;
     private Vector3 movement;
@@ -33,6 +33,30 @@ public class Enemy_Movement_Handler : MonoBehaviour {
 
 
 
+    /*public void SetDirection(bool runRight)
+    {
+        if (runRight)
+        {
+            movement = new Vector3(speed, 0, 0);
+            if (!forward)
+            {
+                charArt.Rotate(0, 180, 0);
+                forward = true;
+            }
+        }
+        else
+        {
+            movement = new Vector3(-speed, 0, 0);
+            if (forward)
+            {
+                charArt.Rotate(0, 180, 0);
+                forward = false;
+            }
+        }
+    }*/
+
+
+
     public void SetDirection(bool runRight)
     {
         if (runRight)
@@ -43,8 +67,6 @@ public class Enemy_Movement_Handler : MonoBehaviour {
                 charArt.Rotate(0, 180, 0);
                 forward = true;
             }
-                
-
         }
         else
         {
@@ -56,7 +78,6 @@ public class Enemy_Movement_Handler : MonoBehaviour {
             }
         }
     }
-
 
 
 
