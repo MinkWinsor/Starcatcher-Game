@@ -29,6 +29,10 @@ public class Enemy_Movement_Handler : MonoBehaviour {
         KillControl.StopAllScripts += stopMoving;
     }
 
+
+
+
+
     public void SetDirection(bool runRight)
     {
         if (runRight)
@@ -52,6 +56,10 @@ public class Enemy_Movement_Handler : MonoBehaviour {
             }
         }
     }
+
+
+
+
 
     public void stopMoving()
     {
