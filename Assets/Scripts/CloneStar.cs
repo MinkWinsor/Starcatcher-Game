@@ -20,7 +20,6 @@ public class CloneStar : MonoBehaviour {
             stars[j].SetActive(true);
             stars[j].transform.position = spawnPoints[i].position;
             stars[j].GetComponent<StarControl>().addForces();
-            //StartCoroutine(stars[j].GetComponent<StarControl>().RunRandomForce());
 
             if (j < stars.Length - 1)
             {
@@ -30,7 +29,6 @@ public class CloneStar : MonoBehaviour {
             {
                 j = 0;
             }
-            //Instantiate(star, spawnPoints[i].position, Quaternion.identity);
             yield return new WaitForSeconds(spawnFrequency);
 
         }

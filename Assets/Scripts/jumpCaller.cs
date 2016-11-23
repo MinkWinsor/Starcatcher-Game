@@ -10,7 +10,7 @@ public class jumpCaller : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
         if (canTrigger)
         {
-            print(other);
+
             myScript.jumpHandler();
             canTrigger = false;
         }
