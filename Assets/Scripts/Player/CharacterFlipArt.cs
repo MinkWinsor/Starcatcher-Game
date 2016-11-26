@@ -8,6 +8,7 @@ public class CharacterFlipArt : MonoBehaviour
     private Transform characterArt;
     public bool forward = true;
     public SpriteRenderer spriteRen;
+    public Transform canvasRen;
 
     //This function flips the art and sets that the art has been flipped.
 
@@ -20,6 +21,7 @@ public class CharacterFlipArt : MonoBehaviour
                 if (!forward)
                 {
                     characterArt.Rotate(0, 180, 0);
+                    canvasRen.Rotate(0, 180, 0);
                     forward = true;
                 }
                 
@@ -28,6 +30,7 @@ public class CharacterFlipArt : MonoBehaviour
                 if (forward)
                 {
                     characterArt.Rotate(0, 180, 0);
+                    canvasRen.Rotate(0, 180, 0);
                     forward = false;
                 }
                 break;
@@ -39,6 +42,7 @@ public class CharacterFlipArt : MonoBehaviour
         UserInputs.FlipDirection += FlipCharacter;
         KillControl.StopAllScripts += stopScript;
         characterArt = GameObject.FindGameObjectWithTag("Player").transform;
+        //canvasRen = GetComponent
     }
 
     void stopScript()

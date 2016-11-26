@@ -22,7 +22,10 @@ public class KillControl : MonoBehaviour {
         StopAllScripts();
     }
 
-
+    public void StopGame()
+    {
+        StopAllScripts();
+    }
 
 
     public void StartReset()
