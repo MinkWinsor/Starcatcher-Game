@@ -6,7 +6,7 @@ public class ScoreDisplay : MonoBehaviour {
 
     private Text scoreText;
     //private IEnumerator coroutine;
-    private bool coroutineRunning = false;
+    //private bool coroutineRunning = false;
 
 	// Use this for initialization
 	void Start () {
@@ -43,12 +43,12 @@ public class ScoreDisplay : MonoBehaviour {
 
     IEnumerator scoreDisplayTimer()
     {
-        coroutineRunning = true;
+        //coroutineRunning = true;
         //if (!scoreText.gameObject.activeSelf)
             scoreText.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         //if (scoreText.gameObject.activeSelf)
             scoreText.gameObject.SetActive(false);
-        coroutineRunning = false;
+        //coroutineRunning = false;
     }
 }
