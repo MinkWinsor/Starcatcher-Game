@@ -12,7 +12,7 @@ public class PlayerCC : MonoBehaviour {
     public float jumpSpeed = 1;
     public int jumpCount = 0;
     public int jumpCountMax = 2;
-    public int slideDuration = 20;
+    //public int slideDuration = 20;
     //public groundCheckScript groundCollider;
 
     //public Action jumpCheck;
@@ -27,7 +27,7 @@ public class PlayerCC : MonoBehaviour {
     //private bool running = false;
 
     //CoRoutine for sliding character
-    IEnumerator Slide ()
+    /*IEnumerator Slide ()
     {
         int durationTemp = slideDuration;
 
@@ -44,7 +44,7 @@ public class PlayerCC : MonoBehaviour {
 
         speed = speedTemp;
         slideDuration = durationTemp;
-    }
+    }*/
 
     void StopScript()
     {
@@ -69,20 +69,20 @@ public class PlayerCC : MonoBehaviour {
         
 
         //Start Sliding
-        if (Input.GetKeyDown(KeyCode.D) && Input.GetKey(KeyCode.S))
+        /*if (Input.GetKeyDown(KeyCode.D) && Input.GetKey(KeyCode.S))
         {
             print("StartSliding");
             StartCoroutine(Slide());
         }
 
-        /*if(jumpCheck != null)
+        if(jumpCheck != null)
         {
             jumpCheck();
         }
         if (runCheck != null)
         {
             runCheck();
-        }*/
+        }
 
         if (Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.S))
         {
@@ -92,7 +92,7 @@ public class PlayerCC : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.S))
         {
             StartCoroutine(Slide());
-        }
+        }*/
 
     }
 
