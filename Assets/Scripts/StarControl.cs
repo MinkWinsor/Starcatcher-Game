@@ -4,18 +4,17 @@ using System.Collections;
 public class StarControl : MonoBehaviour {
 
     public float endTime = 3;
-    
     public int forceRange = 10;
     public int torqueForceRange = 1;
-    private float forceTime = 10;
     public float startingForceTime = 10;
 
+    private float forceTime = 10;
     private float forceDuration = 0.1f;
     private Rigidbody rigid;
     private Vector3 forceVector;
     private Animator anims;
     private Vector3 torqueVector;
-    public Star_Collision mySC;
+    private Star_Collision mySC;
 
 
     void Start()
@@ -23,6 +22,7 @@ public class StarControl : MonoBehaviour {
         mySC = GetComponentInChildren<Star_Collision>();
         anims = GetComponent<Animator>();
         anims.SetBool("Destory", false);
+        
     }
     
     public void addForces()
@@ -32,10 +32,12 @@ public class StarControl : MonoBehaviour {
 
     IEnumerator RunRandomForce()
     {
-        if(rigid == null)
+        if (rigid == null)
             rigid = GetComponent<Rigidbody>();
+
         forceTime = startingForceTime;
         forceVector.x = UnityEngine.Random.Range(-forceRange, forceRange);
+        forceVector.y = UnityEngine.Random.Range(-forceRange * 2, 0);
 
         torqueVector.x = UnityEngine.Random.Range(-torqueForceRange, torqueForceRange);
         torqueVector.y = UnityEngine.Random.Range(-torqueForceRange, torqueForceRange);
@@ -54,6 +56,7 @@ public class StarControl : MonoBehaviour {
     public void Deactivate()
     {
         anims.SetBool("Destory", false);
+        rigid.velocity = Vector3.zero;
         gameObject.SetActive(false);
     }
 
