@@ -68,16 +68,18 @@ public class PlayerCC : MonoBehaviour {
 
     void StopScript()
     {
-       UserInputs.MoveOnButtons -= Move;
-       UserInputs.JumpOnButtons -= Jump;
+        UserInputs.MoveOnButtons -= Move;
+        UserInputs.JumpOnButtons -= Jump;
         starCollider.gameObject.SetActive(false);
-       anim.enabled = false;
-       KillControl.StopAllScripts -= StopScript;
+        anim.enabled = false;
+        runAudioPlaying = false;
+        runAudio.Stop();
+        KillControl.StopAllScripts -= StopScript;
     }
 
 	
 	
-	// Update is called once per frame
+	/* Update is called once per frame
 	void Update () {
         
 
@@ -105,9 +107,9 @@ public class PlayerCC : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.S))
         {
             StartCoroutine(Slide());
-        }*/
+        }
 
-    }
+    }*/
 
     void Move(float _moveInY)
     {
@@ -126,7 +128,6 @@ public class PlayerCC : MonoBehaviour {
         }
         anim.SetFloat("MoveSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));
         
-        //print(Input.GetAxis("Horizontal"));
         if (myCC.isGrounded && tempPos.y < 0)
         {
             anim.SetBool("Jumping", false);

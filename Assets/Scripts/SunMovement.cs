@@ -26,4 +26,9 @@ public class SunMovement : MonoBehaviour {
     {
         this.enabled = false;
     }
+
+    void OnDestroy()
+    {
+        KillControl.StopAllScripts -= stopScript;
+    }
 }

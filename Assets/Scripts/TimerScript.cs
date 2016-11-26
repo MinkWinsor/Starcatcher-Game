@@ -72,7 +72,13 @@ public class TimerScript : MonoBehaviour {
 
     void stopScript()
     {
+
         StopAllCoroutines();
         this.enabled = false;
+    }
+
+    void OnDestroy()
+    {
+        KillControl.StopAllScripts -= stopScript;
     }
 }
