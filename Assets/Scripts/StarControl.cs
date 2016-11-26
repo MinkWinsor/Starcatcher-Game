@@ -15,13 +15,14 @@ public class StarControl : MonoBehaviour {
     private Animator anims;
     private Vector3 torqueVector;
     private Star_Collision mySC;
-
+    private AudioSource collideChime;
 
     void Start()
     {
         mySC = GetComponentInChildren<Star_Collision>();
         anims = GetComponent<Animator>();
         anims.SetBool("Destory", false);
+        collideChime = GetComponent<AudioSource>();
         
     }
     
@@ -62,6 +63,7 @@ public class StarControl : MonoBehaviour {
 
     void OnCollisionEnter()
     {
+        collideChime.Play();
         forceTime = 0;
         mySC.groundHit();
         anims.SetBool("Destory", true);

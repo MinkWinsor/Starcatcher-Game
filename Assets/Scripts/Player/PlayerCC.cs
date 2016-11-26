@@ -27,6 +27,8 @@ public class PlayerCC : MonoBehaviour {
     private CapsuleCollider starCollider;
     private CharacterController myCC;
     private Vector3 tempPos;
+    private AudioSource runAudio;
+    private bool runAudioPlaying = false;
     //private bool running = false;
 
 
@@ -34,6 +36,7 @@ public class PlayerCC : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        runAudio = GetComponent<AudioSource>();
         starCollider = GetComponentInChildren<CapsuleCollider>();
         myCC = GetComponent<CharacterController>();
         UserInputs.MoveOnButtons += Move;
@@ -111,10 +114,16 @@ public class PlayerCC : MonoBehaviour {
 
         tempPos.y -= gravity * Time.deltaTime;
         tempPos.x = speed * Input.GetAxis("Horizontal");
-        /*if (tempPos.x != 0 && jumpCheck == null)
+        if (tempPos.x != 0 && !runAudioPlaying)
         {
-            runCheck = runCheckHandler;
-        }*/
+            runAudioPlaying = true;
+            runAudio.Play();
+        }
+        if (tempPos.x == 0 && runAudioPlaying)
+        {
+            runAudioPlaying = false;
+            runAudio.Stop();
+        }
         anim.SetFloat("MoveSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));
         
         //print(Input.GetAxis("Horizontal"));
