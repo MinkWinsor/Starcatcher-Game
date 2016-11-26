@@ -18,13 +18,30 @@ public class PlayerCC : MonoBehaviour {
     //public Action jumpCheck;
     //public Action runCheck;
     public Animator anim;
-    
+
+
+
 
     //**Private variables**//
 
+    private CapsuleCollider starCollider;
     private CharacterController myCC;
     private Vector3 tempPos;
     //private bool running = false;
+
+
+
+    // Use this for initialization
+    void Start()
+    {
+        starCollider = GetComponentInChildren<CapsuleCollider>();
+        myCC = GetComponent<CharacterController>();
+        UserInputs.MoveOnButtons += Move;
+        UserInputs.JumpOnButtons += Jump;
+        KillControl.StopAllScripts += StopScript;
+
+    }
+
 
     //CoRoutine for sliding character
     /*IEnumerator Slide ()
@@ -50,19 +67,12 @@ public class PlayerCC : MonoBehaviour {
     {
        UserInputs.MoveOnButtons -= Move;
        UserInputs.JumpOnButtons -= Jump;
+        starCollider.gameObject.SetActive(false);
        anim.enabled = false;
        KillControl.StopAllScripts -= StopScript;
     }
 
-	// Use this for initialization
-	void Start () {
-        
-        myCC = GetComponent<CharacterController>();
-        UserInputs.MoveOnButtons += Move;
-        UserInputs.JumpOnButtons += Jump;
-        KillControl.StopAllScripts += StopScript;
-
-    }
+	
 	
 	// Update is called once per frame
 	void Update () {
