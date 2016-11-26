@@ -9,7 +9,7 @@ public class TimerScript : MonoBehaviour {
     public UnityEngine.UI.Text timeText;
     //public static Action<int> TimerUpdate;
     private int startingTime;
-    
+
 
     /*public int getStartingTime()
     {
@@ -20,7 +20,7 @@ public class TimerScript : MonoBehaviour {
     {
         return timeLeft;
     }*/
-
+    
 
 
     IEnumerator Countdown()
@@ -40,7 +40,7 @@ public class TimerScript : MonoBehaviour {
             if (timeLeft == 0)
             {
 
-                ResetHandler.ResetLevel();
+                KillControl.StopAllScripts();
             }
 
 
