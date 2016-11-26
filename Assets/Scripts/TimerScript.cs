@@ -7,11 +7,11 @@ public class TimerScript : MonoBehaviour {
     public int timeLeft;
     public bool timerRunning;
     public UnityEngine.UI.Text timeText;
-    public static Action<int> TimerUpdate;
+    //public static Action<int> TimerUpdate;
     private int startingTime;
     
 
-    public int getStartingTime()
+    /*public int getStartingTime()
     {
         return startingTime;
     }
@@ -19,7 +19,7 @@ public class TimerScript : MonoBehaviour {
     public int getCurrentTime()
     {
         return timeLeft;
-    }
+    }*/
 
 
 
@@ -30,7 +30,12 @@ public class TimerScript : MonoBehaviour {
             yield return new WaitForSeconds(1);
             timeLeft--;
             dispTime();
-            TimerUpdate(timeLeft);
+            //TimerUpdate(timeLeft);
+
+            if(timeLeft == (startingTime / 2))
+            {
+                SunMovement.goDown = false;
+            }
             
             if (timeLeft == 0)
             {
@@ -51,6 +56,7 @@ public class TimerScript : MonoBehaviour {
         startingTime = timeLeft;
         dispTime();
         StartCoroutine(Countdown());
+        SunMovement.goDown = true;
     }
 	
     void dispTime()
