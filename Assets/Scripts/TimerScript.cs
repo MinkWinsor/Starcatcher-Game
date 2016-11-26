@@ -39,12 +39,9 @@ public class TimerScript : MonoBehaviour {
             
             if (timeLeft == 0)
             {
-
+                timeText.text = ("Time: " + "0:00");
                 KillControl.StopAllScripts();
             }
-
-
-            
 
         }
         print("ERROR_LOOP");
@@ -57,6 +54,7 @@ public class TimerScript : MonoBehaviour {
         dispTime();
         StartCoroutine(Countdown());
         SunMovement.goDown = true;
+        KillControl.StopAllScripts += stopScript;
     }
 	
     void dispTime()
@@ -70,5 +68,11 @@ public class TimerScript : MonoBehaviour {
         {
             timeText.text = ("Time: " + (timeLeft / 60) + ":0" + secondsLeft);
         }
+    }
+
+    void stopScript()
+    {
+        StopAllCoroutines();
+        this.enabled = false;
     }
 }
