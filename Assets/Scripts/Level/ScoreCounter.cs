@@ -7,20 +7,23 @@ public class ScoreCounter : MonoBehaviour {
     public int score;
     public UnityEngine.UI.Text scoreText;
     public int starsLost;
+    public ScoreDisplay dispScore;
 
     //Adds to score and changes text component to display new score.
     public void AddToScore(int toAdd)
     {
         score += toAdd;
         scoreText.text = ("Score: " + score);
+        dispScore.updateScore(toAdd);
     }
 
     public void PlayerHit()
     {
         if (score >= starsLost)
         {
-            score -= starsLost;
+            score += starsLost;
             scoreText.text = ("Score: " + score);
+            dispScore.updateScore(starsLost);
         }
         else
         {
