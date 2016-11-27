@@ -29,7 +29,7 @@ public class PlayerCC : MonoBehaviour {
     private Vector3 tempPos;
     private AudioSource runAudio;
     private bool runAudioPlaying = false;
-    //private bool running = false;
+    private bool jumping = false;
 
 
 
@@ -116,7 +116,7 @@ public class PlayerCC : MonoBehaviour {
 
         tempPos.y -= gravity * Time.deltaTime;
         tempPos.x = speed * Input.GetAxis("Horizontal");
-        if (tempPos.x != 0 && !runAudioPlaying)
+        if (tempPos.x != 0 && !runAudioPlaying && !jumping)
         {
             runAudioPlaying = true;
             runAudio.Play();
@@ -130,6 +130,7 @@ public class PlayerCC : MonoBehaviour {
         
         if (myCC.isGrounded && tempPos.y < 0)
         {
+            jumping = false;
             anim.SetBool("Jumping", false);
             tempPos.y = 0;
             jumpCount = 0;
@@ -150,8 +151,11 @@ public class PlayerCC : MonoBehaviour {
 
         if (jumpCount < jumpCountMax)
         {
+            runAudioPlaying = false;
+            runAudio.Stop();
             jumpCount++;
             tempPos.y = jumpSpeed;
+            jumping = true;
             //jumpCheck = jumpCheckHandler;
             anim.SetBool("Jumping", true);
         }
