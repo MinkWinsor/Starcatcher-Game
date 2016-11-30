@@ -68,4 +68,10 @@ public class StarControl : MonoBehaviour {
         mySC.groundHit();
         anims.SetBool("Destory", true);
     }
+
+    void OnEnable()
+    {
+        if(mySC != null)
+            mySC.hasHitGround = false;
+    }
 }

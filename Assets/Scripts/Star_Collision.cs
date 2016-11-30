@@ -25,7 +25,7 @@ public class Star_Collision : MonoBehaviour
         if (hasHitGround)
         {
             levelControlScore.AddToScore(scorePerStar);
-            hasHitGround = false;
+            
             myStarControl.Deactivate();
         }
         else
@@ -38,6 +38,8 @@ public class Star_Collision : MonoBehaviour
         
         //Destroy(this.transform.parent.gameObject);
     }
+
+    
 
 
 }
