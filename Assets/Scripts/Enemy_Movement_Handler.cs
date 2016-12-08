@@ -88,7 +88,8 @@ public class Enemy_Movement_Handler : MonoBehaviour {
             yield return new WaitForSeconds(.01f);
             
             movement.y -= gravity * Time.deltaTime;
-            myCC.Move(movement * Time.deltaTime);
+            if(gameObject.activeSelf)
+                myCC.Move(movement * Time.deltaTime);
             
 
             if (transform.position.z != 0)
