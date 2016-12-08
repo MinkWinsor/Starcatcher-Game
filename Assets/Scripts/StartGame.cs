@@ -32,6 +32,12 @@ public class StartGame : MonoBehaviour {
         //Application.Quit();
     }
 
+    public void loadInstructions()
+    {
+        myClick.Clicked();
+        StartCoroutine(loadDelayed(3));
+    }
+
     public IEnumerator loadDelayed(int index)
     {
         yield return new WaitForSeconds(0.5f);
