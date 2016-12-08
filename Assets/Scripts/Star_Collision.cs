@@ -8,6 +8,7 @@ public class Star_Collision : MonoBehaviour
     public int scorePerStar;
     private StarControl myStarControl;
     public bool hasHitGround = false;
+    public PlayCrunch noise;
 
     //Called once per initialization.
     void Start()
@@ -22,6 +23,7 @@ public class Star_Collision : MonoBehaviour
 
     void OnTriggerEnter()
     {
+        noise.playCrunchNoise();
         if (hasHitGround)
         {
             levelControlScore.AddToScore(scorePerStar);

@@ -14,11 +14,13 @@ public class Enemy_Movement_Handler : MonoBehaviour {
     private Vector3 movement;
     private CharacterController myCC;
     private Vector3 tempPos;
+    private AudioSource running;
     
 
 
     // Use this for initialization
     void Start () {
+        running = GetComponent<AudioSource>();
         myCC = GetComponent<CharacterController>();
         movement = new Vector3(speed, 0 ,0);
         
@@ -53,6 +55,7 @@ public class Enemy_Movement_Handler : MonoBehaviour {
 
     public void stopMoving()
     {
+        running.Stop();
         keepGoing = false;
         anim.enabled = false;
         KillControl.StopAllScripts -= stopMoving;

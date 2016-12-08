@@ -18,8 +18,8 @@ public class PlayerCC : MonoBehaviour {
     //public Action jumpCheck;
     //public Action runCheck;
     public Animator anim;
-
-
+    public AudioSource runAudio;
+    public AudioSource jumpAudio;
 
 
     //**Private variables**//
@@ -27,7 +27,7 @@ public class PlayerCC : MonoBehaviour {
     private CapsuleCollider starCollider;
     private CharacterController myCC;
     private Vector3 tempPos;
-    private AudioSource runAudio;
+    
     private bool runAudioPlaying = false;
     private bool jumping = false;
 
@@ -36,7 +36,7 @@ public class PlayerCC : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        runAudio = GetComponent<AudioSource>();
+        //runAudio = GetComponent<AudioSource>();
         starCollider = GetComponentInChildren<CapsuleCollider>();
         myCC = GetComponent<CharacterController>();
         UserInputs.MoveOnButtons += Move;
@@ -153,6 +153,7 @@ public class PlayerCC : MonoBehaviour {
         {
             runAudioPlaying = false;
             runAudio.Stop();
+            jumpAudio.Play();
             jumpCount++;
             tempPos.y = jumpSpeed;
             jumping = true;

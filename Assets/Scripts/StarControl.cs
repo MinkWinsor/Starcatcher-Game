@@ -16,6 +16,7 @@ public class StarControl : MonoBehaviour {
     private Vector3 torqueVector;
     private Star_Collision mySC;
     private AudioSource collideChime;
+    public AudioClip collideClip;
 
     void Start()
     {
@@ -63,7 +64,7 @@ public class StarControl : MonoBehaviour {
 
     void OnCollisionEnter()
     {
-        collideChime.Play();
+        collideChime.PlayOneShot(collideClip);
         forceTime = 0;
         mySC.groundHit();
         anims.SetBool("Destory", true);

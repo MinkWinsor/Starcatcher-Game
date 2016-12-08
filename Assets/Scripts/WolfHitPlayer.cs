@@ -7,19 +7,23 @@ public class WolfHitPlayer : MonoBehaviour {
     public bool triggerReady = true;
     public CharacterFlipArt myCFA;
 
-	// Use this for initialization
-	void OnTriggerEnter () {
+    private AudioSource ouchAudio;
+
+    void Start()
+    {
+        ouchAudio = GetComponent<AudioSource>();
+    }
+
+    // Use this for initialization
+    void OnTriggerEnter () {
         if (triggerReady)
         {
             mySC.PlayerHit();
             triggerReady = false;
             StartCoroutine(myCFA.flashCharacter());
+            ouchAudio.Play();
         }
         
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
