@@ -12,11 +12,11 @@ public class UserInputs : MonoBehaviour {
     void Update () {
 
 
-        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && FlipDirection != null)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && FlipDirection != null)
         {
             FlipDirection(KeyCode.RightArrow);
         }
-        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && FlipDirection != null)
+        if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && FlipDirection != null)
         {
             FlipDirection(KeyCode.LeftArrow);
         }

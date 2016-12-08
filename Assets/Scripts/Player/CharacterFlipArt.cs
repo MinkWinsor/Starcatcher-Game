@@ -18,7 +18,7 @@ public class CharacterFlipArt : MonoBehaviour
         switch (_keyCode)
         {
             case KeyCode.RightArrow:
-                if (!forward)
+                if (!forward && (Input.GetAxis("Horizontal") > 0))
                 {
                     characterArt.Rotate(0, 180, 0);
                     canvasRen.Rotate(0, 180, 0);
@@ -27,7 +27,7 @@ public class CharacterFlipArt : MonoBehaviour
                 
                 break;
             case KeyCode.LeftArrow:
-                if (forward)
+                if (forward && (Input.GetAxis("Horizontal") < 0))
                 {
                     characterArt.Rotate(0, 180, 0);
                     canvasRen.Rotate(0, 180, 0);

@@ -115,6 +115,7 @@ public class PlayerCC : MonoBehaviour {
     {
 
         tempPos.y -= gravity * Time.deltaTime;
+        
         tempPos.x = speed * Input.GetAxis("Horizontal");
         if (tempPos.x != 0 && !runAudioPlaying && !jumping)
         {
